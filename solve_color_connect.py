@@ -8,7 +8,7 @@ Puzzle Assignmet 2 - Phase 1
 Trevor Ross
 02/03/2016
 """
-import GBFGS
+import AstarGS
 import sys
 
 def parse_arguments(args):
@@ -206,7 +206,7 @@ def main(args):
     (num_colors, pzzl_array, appreciation_4_beauty) = parse_arguments(args)
 
     # solve the input puzzle
-    solution, run_time = GBFGS.solve(pzzl_array, num_colors)
+    solution, run_time = AstarGS.solve(pzzl_array, num_colors)
 
     # print solution
     if solution is False:
