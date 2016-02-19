@@ -70,7 +70,10 @@ class Node(object):
             # path_len = row_diff + col_diff
             # EUCHLIDIAN DISTANC
             path_len = (row_diff ** 2 + col_diff ** 2) ** (0.5)
+            if path_len == 0:
+                path_len = -1
             self.total_dist += path_len
+        self.total_dist += self.path_cost
 
     def hashable_state(self):
         """
@@ -190,6 +193,15 @@ class StateTree(object):
             # pop the first item of the priority queue, it will be evaluated
             node_ev = heapq.heappop(frontier)
             node_ev = self.node_dict[node_ev[1]]
+
+            #######
+            # node_ev.visualize()
+            # print 'f(n) =', node_ev.total_dist,
+            # print '=', node_ev.path_cost,
+            # print '+', node_ev.total_dist - node_ev.path_cost
+            #
+            # time.sleep(0.1)
+            #######
 
             # check if the node is the final state
             if VerifyFinal(node_ev) is True:
