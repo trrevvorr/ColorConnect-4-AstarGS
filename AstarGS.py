@@ -66,6 +66,9 @@ class Node(object):
 
             row_diff = abs(head[0] - end[0])
             col_diff = abs(head[1] - end[1])
+            # MANHATTAN DISTANCE
+            # path_len = row_diff + col_diff
+            # EUCHLIDIAN DISTANC
             path_len = (row_diff ** 2 + col_diff ** 2) ** (0.5)
             self.total_dist += path_len
 
@@ -164,9 +167,9 @@ class StateTree(object):
         # used to look up a node by its ID
         self.node_dict = {self.root.ID: self.root}
 
-    def BestFirst_TS(self):
+    def AstarGS(self):
         """
-        Uses Greedy Best-First Graph Search to find solution
+        Uses A-Star Graph Search to find solution
 
         Heuristic = shortest distance between path_head and path_end
         Action that produces the state with the smallest heuristic(n) is chosen
@@ -458,6 +461,6 @@ def solve(pzzl_array, num_colors):
 
     # build state tree and find solution
     PTree = StateTree(pzzl_array, num_colors)
-    solution = PTree.BestFirst_TS()
+    solution = PTree.AstarGS()
 
     return (solution, PTree.run_time)
