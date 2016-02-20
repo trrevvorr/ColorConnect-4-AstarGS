@@ -1,12 +1,12 @@
 """
-Solves Color Connect Puzzle via greedy best-first graph search as per
-Puzzle 2 requirement
+Solves Color Connect Puzzle via A* graph search as per
+Puzzle 4's requirement
 
 AI - CS 5400 - Sec 1A
-Puzzle Assignmet 2 - Phase 1
+Puzzle Assignmet 4
 
 Trevor Ross
-02/09/2016
+02/19/2016
 """
 import copy
 import random

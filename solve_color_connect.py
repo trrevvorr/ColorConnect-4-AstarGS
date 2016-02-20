@@ -1,12 +1,11 @@
 """
-Solves Color Connect Puzzle by importing and utalizing iterative deepining,
-depth first search module as per Puzzle 2 requirement
+Reads input puzzle file and prints the output of the solution
 
 AI - CS 5400 - Sec 1A
-Puzzle Assignmet 2 - Phase 1
+Puzzle Assignmet 4
 
 Trevor Ross
-02/03/2016
+02/19/2016
 """
 import AstarGS
 import sys
